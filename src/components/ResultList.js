@@ -6,15 +6,15 @@ function ResultList(props) {
     console.log("Current page is: " + JSON.stringify(props.currentPage));
     
     
-    if (props.currentPage === "Home"){
+    if (props.currentPage === ""){
   
     return (
     <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
+          <th scope="col"> <a href="#Alpha" onClick={() => props.sortByName()}>First </a> </th>
+          <th scope="col"> <a href="#Alpha" onClick={() => props.sortByLast()}>Last </a> </th>
           <th scope="col">Phone Number</th>
           <th scope="col">Email</th>
         </tr>

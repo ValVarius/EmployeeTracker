@@ -29,18 +29,52 @@ class Container extends Component {
     this.setState({ currentPage: page });
   };
 
-  handleInputChange = event => {
-    console.log(event.target.value);
-    
+  handleInputChange = event => {    
     this.handlePageChange(event.target.value)
-    // // Updating the input's state
     
-    // const value = event.target.value;
-    // const name = event.target.name;
-    // this.setState({
-    //   [name]: value
-    // });
   };
+
+  sortByName = () => {
+    var alphabetical = this.state.result.sort(compare);
+
+    function compare(a, b) {
+
+      const nameA = a.name.first.toUpperCase();
+      const nameB = b.name.first.toUpperCase();
+    
+      let comparison = 0;
+      if (nameA > nameB) {
+        comparison = 1;
+      } else if (nameA < nameB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    
+    
+    this.setState({ result: alphabetical });
+  }
+
+  sortByLast = () => {
+    var alphabetical = this.state.result.sort(compare);
+
+    function compare(a, b) {
+
+      const nameA = a.name.last.toUpperCase();
+      const nameB = b.name.last.toUpperCase();
+    
+      let comparison = 0;
+      if (nameA > nameB) {
+        comparison = 1;
+      } else if (nameA < nameB) {
+        comparison = -1;
+      }
+      return comparison;
+    }
+    
+    
+    this.setState({ result: alphabetical });
+  }
 
 
   render() {
@@ -58,6 +92,8 @@ class Container extends Component {
         results={this.state.result} 
         handlePageChange={this.handlePageChange}
         currentPage={this.state.currentPage}
+        sortByName = {this.sortByName}
+        sortByLast = {this.sortByLast}
         />
       </div>
       
