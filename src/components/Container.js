@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import ResultList from "./ResultList";
+import Navbar from "./Navbar";
 
 class Container extends Component {
   state = {
     result: [],
     search: "",
-    currentPage: "Home"
+    currentPage: ""
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -28,15 +29,19 @@ class Container extends Component {
     this.setState({ currentPage: page });
   };
 
-  // handleInputChange = event => {
-  //   const value = event.target.value;
-  //   const name = event.target.name;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
+  handleInputChange = event => {
+    console.log(event.target.value);
+    
+    this.handlePageChange(event.target.value)
+    // // Updating the input's state
+    
+    // const value = event.target.value;
+    // const name = event.target.name;
+    // this.setState({
+    //   [name]: value
+    // });
+  };
 
-  // {this.state.result.results[0].cell}
 
   render() {
 
@@ -44,6 +49,11 @@ class Container extends Component {
     return (
       
       <div className="container-sm">
+        <Navbar 
+        handlePageChange={this.handlePageChange}
+        currentPage={this.state.currentPage}
+        handleInputChange ={this.handleInputChange}
+        />
         <ResultList 
         results={this.state.result} 
         handlePageChange={this.handlePageChange}
