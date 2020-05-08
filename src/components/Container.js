@@ -19,7 +19,6 @@ class Container extends Component {
     API.search()
       .then(res => {
         this.setState({ result: res.data.results })
-        console.log(this.state.result);
         
       })
       .catch(err => console.log(err))

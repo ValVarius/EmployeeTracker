@@ -1,1 +1,3 @@
 # EmployeeTracker
+
+This Apllication is an employee directory. The user is presented with a table displaying a list of Employee and their basic info. By clicking onto the Thumbnail, the user access a different page where some more specific information on the selected employee are displayed. The home button brings the user back to the list of employee. By clicking on either the first or last name column, the user can see the whole list of emplyee in alphabetical order, either by last or first name. By adding text to search field, the user can use a specific employee by first and last name; this occurs automatically as every letter input in the text area filters the names further.

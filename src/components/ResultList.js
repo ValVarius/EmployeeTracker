@@ -3,7 +3,6 @@ import React from "react";
 function ResultList(props) {
 
     
-    console.log("Current page is: " + JSON.stringify(props.currentPage));
     
     
     if (props.currentPage === ""){
@@ -23,10 +22,10 @@ function ResultList(props) {
 
       {props.results.map(result => (
           
-        <tr>
+        <tr key = {result.cell}>
         <th scope="row">
             <a href="#single"    onClick={() => props.handlePageChange({result})}>
-            <img src={result.picture.thumbnail} classNameName="img-responsive" alt= 'http://placekitten.com/200/300' />
+            <img src={result.picture.thumbnail} className="img-responsive" alt= 'http://placekitten.com/200/300' />
             </a> 
             </th>
         <td>{result.name.first}</td>
@@ -46,7 +45,6 @@ function ResultList(props) {
       else if  (typeof props.currentPage === 'string') {
 
         let matches = props.results.filter(function(result) {
-            // let searchedName = result.name.first.substring(0,props.currentPage.length)
             return (result.name.first +" "+ result.name.last).substring(0,props.currentPage.length).toLowerCase() === props.currentPage.toLowerCase()
         })
 
@@ -66,10 +64,10 @@ function ResultList(props) {
 
             {matches.map(result => (
           
-          <tr>
+          <tr key = {result.cell}>
           <th scope="row">
               <a href="#single"    onClick={() => props.handlePageChange({result})}>
-              <img src={result.picture.thumbnail} classNameName="img-responsive" alt= 'http://placekitten.com/200/300' />
+              <img src={result.picture.thumbnail} className="img-responsive" alt= 'http://placekitten.com/200/300' />
               </a> 
               </th>
           <td>{result.name.first}</td>
