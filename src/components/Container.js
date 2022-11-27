@@ -34,7 +34,7 @@ class Container extends Component {
   };
 
   sortByName = () => {
-    var alphabetical = this.state.result.sort(compare);
+    let alphabetical = this.state.result.sort(compare);
 
     function compare(a, b) {
 
@@ -55,7 +55,7 @@ class Container extends Component {
   }
 
   sortByLast = () => {
-    var alphabetical = this.state.result.sort(compare);
+    let alphabetical = this.state.result.sort(compare);
 
     function compare(a, b) {
 

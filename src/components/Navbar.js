@@ -16,7 +16,6 @@ export default function Navbar(props) {
          type="text"
          placeholder="Search Name"
          />
-        {/* <button onClick={props.handleInputChange}>Submit</button> */}
          </form>
         </nav>
     )
